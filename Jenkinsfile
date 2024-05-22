@@ -1,0 +1,20 @@
+pipeline { 
+    agent {
+        label "ws"
+    }
+    stages {
+        stage('Lint Checks') {
+            steps {
+                sh "echo ***** Starting Style checks *******"
+                // sh "pip3 install pylint"
+                // sh "pylint *.py || true"
+                sh "echo **** Starting Style checks *******"
+            }
+        }
+        stage('Static Code Analysis') {
+            steps {
+                sh "echo Starting Static code analysis"
+            }
+        }
+    }
+}
